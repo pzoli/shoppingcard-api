@@ -1,0 +1,844 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "ShoppingCard",
+        "description": "",
+        "version": "1.0.0"
+    },
+    "tags": [],
+    "paths": {
+        "/api/admin/crud/amounttype/count": {
+            "get": {
+                "summary": "Get AmountType count",
+                "x-apidog-folder": "CRUD/AmountType",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "AmountType"
+                ],
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "count": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "x-apidog-orders": [
+                                        "count"
+                                    ],
+                                    "required": [
+                                        "count"
+                                    ],
+                                    "x-apidog-ignore-properties": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            }
+        },
+        "/api/admin/crud/amounttype": {
+            "get": {
+                "summary": "Get all AmountType",
+                "x-apidog-folder": "CRUD/AmountType",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "AmountType"
+                ],
+                "parameters": [
+                    {
+                        "name": "first",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "rowcount",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AmountType"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            },
+            "post": {
+                "summary": "Save AmountType",
+                "x-apidog-folder": "CRUD/AmountType",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "AmountType"
+                ],
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AmountType"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AmountType"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            }
+        },
+        "/api/admin/crud/amounttype/{id}": {
+            "get": {
+                "summary": "Get AmountType",
+                "x-apidog-folder": "CRUD/AmountType",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "AmountType"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AmountType"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            },
+            "put": {
+                "summary": "Update AmountType",
+                "x-apidog-folder": "CRUD/AmountType",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "AmountType"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AmountType"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateResult"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            },
+            "delete": {
+                "summary": "Delete AmountType",
+                "x-apidog-folder": "CRUD/AmountType",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "AmountType"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteResult"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            }
+        },
+        "/api/admin/crud/item/count": {
+            "get": {
+                "summary": "Get Item count",
+                "x-apidog-folder": "CRUD/Item",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "Item"
+                ],
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "count": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "x-apidog-orders": [
+                                        "count"
+                                    ],
+                                    "required": [
+                                        "count"
+                                    ],
+                                    "x-apidog-ignore-properties": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            }
+        },
+        "/api/admin/crud/item": {
+            "get": {
+                "summary": "Get all Item",
+                "x-apidog-folder": "CRUD/Item",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "Item"
+                ],
+                "parameters": [
+                    {
+                        "name": "first",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "rowcount",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Item"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            },
+            "post": {
+                "summary": "Save Item",
+                "x-apidog-folder": "CRUD/Item",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "Item"
+                ],
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Item"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Item"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            }
+        },
+        "/api/admin/crud/item/{id}": {
+            "get": {
+                "summary": "Get Item",
+                "x-apidog-folder": "CRUD/Item",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "Item"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Item"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            },
+            "put": {
+                "summary": "Update Item",
+                "x-apidog-folder": "CRUD/Item",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "Item"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Item"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateResult"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            },
+            "delete": {
+                "summary": "Delete Item",
+                "x-apidog-folder": "CRUD/Item",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "Item"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteResult"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            }
+        },
+        "/api/admin/crud/category/count": {
+            "get": {
+                "summary": "Get Category count",
+                "x-apidog-folder": "CRUD/Category",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "Category"
+                ],
+                "parameters": [
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "count": {
+                                            "type": "number"
+                                        }
+                                    },
+                                    "x-apidog-orders": [
+                                        "count"
+                                    ],
+                                    "required": [
+                                        "count"
+                                    ],
+                                    "x-apidog-ignore-properties": []
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            }
+        },
+        "/api/admin/crud/category": {
+            "get": {
+                "summary": "Get all Category",
+                "x-apidog-folder": "CRUD/Category",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "Category"
+                ],
+                "parameters": [
+                    {
+                        "name": "first",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "rowcount",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "",
+                        "schema": {
+                            "type": "number"
+                        }
+                    },
+                    {
+                        "name": "filter",
+                        "in": "query",
+                        "description": "",
+                        "required": false,
+                        "example": "",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Category"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            },
+            "post": {
+                "summary": "Save Category",
+                "x-apidog-folder": "CRUD/Category",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "Category"
+                ],
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Category"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Category"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            }
+        },
+        "/api/admin/crud/category/{id}": {
+            "get": {
+                "summary": "Get Category",
+                "x-apidog-folder": "CRUD/Category",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "Category"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Category"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            },
+            "put": {
+                "summary": "Update Category",
+                "x-apidog-folder": "CRUD/Category",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "Category"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Category"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateResult"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            },
+            "delete": {
+                "summary": "Delete Category",
+                "x-apidog-folder": "CRUD/Category",
+                "x-apidog-status": "developing",
+                "deprecated": false,
+                "description": "",
+                "tags": [
+                    "Category"
+                ],
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/DeleteResult"
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-run-in-apidog": ""
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AmountType": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "x-apidog-orders": [
+                    "name"
+                ],
+                "required": [
+                    "name"
+                ],
+                "x-apidog-ignore-properties": [],
+                "x-apidog-folder": "CRUD"
+            },
+            "Item": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "amount": {
+                        "type": "number"
+                    },
+                    "amounttype_id": {
+                        "type": "string"
+                    },
+                    "category_id": {
+                        "type": "string"
+                    }
+                },
+                "x-apidog-orders": [
+                    "name",
+                    "amount",
+                    "amounttype_id",
+                    "category_id"
+                ],
+                "required": [
+                    "name",
+                    "amount",
+                    "amounttype_id",
+                    "category_id"
+                ],
+                "x-apidog-ignore-properties": [],
+                "x-apidog-folder": "CRUD"
+            },
+            "Category": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    }
+                },
+                "x-apidog-orders": [
+                    "name"
+                ],
+                "required": [
+                    "name"
+                ],
+                "x-apidog-ignore-properties": [],
+                "x-apidog-folder": "CRUD"
+            }
+        }
+    },
+    "servers": []
+}
