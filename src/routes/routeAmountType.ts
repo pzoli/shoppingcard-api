@@ -1,5 +1,5 @@
 import { Router } from "express";
-import AmountType from "../models/AmountType";
+import AmountType from "../../../shoppingcard-models/src/models/AmountType";
 import { Condition, ObjectId, UpdateWriteOpResult } from "mongoose";
 import Joi from "joi";
 const router = Router();
@@ -60,4 +60,4 @@ router.post("/", async (req, res) => {
     }
 });
 
-export default router;
+export default router;

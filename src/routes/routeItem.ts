@@ -1,5 +1,5 @@
 import { Router } from "express";
-import Item from "../models/Item";
+import Item from "../../../shoppingcard-models/src/models/Item";
 import { Condition, ObjectId, UpdateWriteOpResult } from "mongoose";
 import Joi from "joi";
 const router = Router();
