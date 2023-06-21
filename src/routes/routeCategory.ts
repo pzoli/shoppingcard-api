@@ -1,42 +1,44 @@
 import { Router } from "express";
-import Category from "../../../shoppingcard-models/src/models/Category";
-import { Condition, ObjectId, UpdateWriteOpResult } from "mongoose";
+import categorySchema from "../../../shoppingcard-models/src/models/Category";
+import { Condition, ObjectId, UpdateWriteOpResult, model } from "mongoose";
 import Joi from "joi";
 const router = Router();
 
+const Category = model("category", categorySchema.categorySchema);
+
 router.get("/", async (req, res) => {
     if (req.query.first && req.query.rowcount) {
-        let result = await Category.Category.find({}).skip(parseInt(req.query.first as string)).limit(parseInt(req.query.rowcount as string));
+        let result = await Category.find({}).skip(parseInt(req.query.first as string)).limit(parseInt(req.query.rowcount as string));
         res.send(result);
     } else {
-        let result = await Category.Category.find({});
+        let result = await Category.find({});
         res.send(result);
     }
 });
 
 router.get("/count", async (req, res) => {
-    let result = await Category.Category.find({});
+    let result = await Category.find({});
     res.send({ count: result.length });
 });
 
 router.get("/:id", async (req, res) => {
-    let result = await Category.Category.find({ _id: req.params.id });
+    let result = await Category.find({ _id: req.params.id });
     res.send(result);
 });
 
 router.delete("/:id", async (req, res) => {
-    let result = await Category.Category.deleteOne({ _id: req.params.id });
+    let result = await Category.deleteOne({ _id: req.params.id });
     res.send(result);
 });
 
 router.put("/:id", async (req, res) => {
-    let valid: Joi.ValidationResult = Category.validate(req.body);
+    let valid: Joi.ValidationResult = categorySchema.validate(req.body);
     if (!valid.error) {
         const filter: Condition<ObjectId> = { _id: req.params.id };
         const updateDoc = {
             $set: req.body
         };
-        Category.Category.updateOne(filter, updateDoc).then((result) =>
+        Category.updateOne(filter, updateDoc).then((result) =>
             res.send(result)
         ).catch((err) =>
             res.status(400).send({ message: err })
@@ -47,9 +49,9 @@ router.put("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
-    let valid: Joi.ValidationResult = Category.validate(req.body);
+    let valid: Joi.ValidationResult = categorySchema.validate(req.body);
     if (!valid.error) {
-        let category = new Category.Category(req.body);
+        let category = new Category(req.body);
         category.save().then(() =>
             res.send(category)
         ).catch((err) =>
